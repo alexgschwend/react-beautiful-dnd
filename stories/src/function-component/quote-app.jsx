@@ -1,16 +1,15 @@
 // @flow
-import React, { useState } from 'react';
 import styled from '@emotion/styled';
-import { DragDropContext, Droppable, Draggable } from '../../../src';
+import React, { useState } from 'react';
 import type {
-  DropResult,
   DraggableProvided,
-  DroppableProvided,
+  DroppableProvided, DropResult
 } from '../../../src';
-import type { Quote as QuoteType } from '../types';
+import { DragDropContext, Draggable, Droppable } from '../../../src';
+import { grid } from '../constants';
 import { quotes as initial } from '../data';
 import reorder from '../reorder';
-import { grid } from '../constants';
+import type { Quote as QuoteType } from '../types';
 
 type QuoteProps = {|
   quote: QuoteType,

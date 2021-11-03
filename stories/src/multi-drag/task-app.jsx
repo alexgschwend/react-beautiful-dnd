@@ -192,24 +192,13 @@ export default class TaskApp extends Component<*, State> {
   render() {
     const entities: Entities = this.state.entities;
     const selected: Id[] = this.state.selectedTaskIds;
+
     return (
       <MainContainer>
         <DragDropContext
           onDragStart={this.onDragStart}
           onDragEnd={this.onDragEnd}
         >
-          <Container>
-            <Column
-              column={entities.columns['todo']}
-              tasks={getTasks(entities, 'todo')}
-              selectedTaskIds={selected}
-              key={'todo'}
-              draggingTaskId={this.state.draggingTaskId}
-              toggleSelection={this.toggleSelection}
-              toggleSelectionInGroup={this.toggleSelectionInGroup}
-              multiSelectTo={this.multiSelectTo}
-            />
-          </Container>
           <Container>
             <ColumnSub
               column={entities.columns['progress']}
@@ -236,6 +225,18 @@ export default class TaskApp extends Component<*, State> {
               tasks={getTasks(entities, 'last')}
               selectedTaskIds={selected}
               key={'last'}
+              draggingTaskId={this.state.draggingTaskId}
+              toggleSelection={this.toggleSelection}
+              toggleSelectionInGroup={this.toggleSelectionInGroup}
+              multiSelectTo={this.multiSelectTo}
+            />
+          </Container>
+          <Container>
+            <Column
+              column={entities.columns['todo']}
+              tasks={getTasks(entities, 'todo')}
+              selectedTaskIds={selected}
+              key={'todo'}
               draggingTaskId={this.state.draggingTaskId}
               toggleSelection={this.toggleSelection}
               toggleSelectionInGroup={this.toggleSelectionInGroup}
