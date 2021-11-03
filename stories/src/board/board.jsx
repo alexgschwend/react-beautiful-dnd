@@ -1,17 +1,17 @@
 // @flow
-import React, { Component } from 'react';
-import styled from '@emotion/styled';
-import { Global, css } from '@emotion/core';
 import { colors } from '@atlaskit/theme';
+import { css, Global } from '@emotion/core';
+import styled from '@emotion/styled';
+import React, { Component } from 'react';
 import type {
-  DropResult,
   DraggableLocation,
   DroppableProvided,
+  DropResult
 } from '../../../src';
-import type { QuoteMap, Quote } from '../types';
-import Column from './column';
-import reorder, { reorderQuoteMap } from '../reorder';
 import { DragDropContext, Droppable } from '../../../src';
+import reorder, { reorderQuoteMap } from '../reorder';
+import type { Quote, QuoteMap } from '../types';
+import Column from './column';
 
 const ParentContainer = styled.div`
   height: ${({ height }) => height};

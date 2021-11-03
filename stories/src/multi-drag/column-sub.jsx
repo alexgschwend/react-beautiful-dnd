@@ -26,12 +26,12 @@ const Container = styled.div`
   margin: ${grid}px;
   border-radius: ${borderRadius}px;
   border: 1px solid ${colors.N100};
-  background-color: ${colors.N50};
+  background-color: ${colors.N10};
 
   /* we want the column to take up its full height */
   display: flex;
   flex-direction: column;
-  max-height: 800px;
+  max-height: 250px;
   overflow-y: auto;
 `;
 
@@ -60,7 +60,7 @@ const getSelectedMap = memoizeOne((selectedTaskIds: Id[]) =>
   }, {}),
 );
 
-export default class Column extends Component<Props> {
+export default class ColumnSub extends Component<Props> {
   render() {
     const column: ColumnType = this.props.column;
     const tasks: TaskType[] = this.props.tasks;

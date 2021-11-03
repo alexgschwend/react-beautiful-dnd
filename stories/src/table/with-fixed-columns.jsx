@@ -1,17 +1,15 @@
 // @flow
-import React, { Component, Fragment } from 'react';
-import styled from '@emotion/styled';
 import { colors } from '@atlaskit/theme';
-import { DragDropContext, Droppable, Draggable } from '../../../src';
-import reorder from '../reorder';
-import { grid } from '../constants';
-import type { Quote } from '../types';
+import styled from '@emotion/styled';
+import React, { Component, Fragment } from 'react';
 import type {
-  DropResult,
-  DroppableProvided,
   DraggableProvided,
-  DraggableStateSnapshot,
+  DraggableStateSnapshot, DroppableProvided, DropResult
 } from '../../../src';
+import { DragDropContext, Draggable, Droppable } from '../../../src';
+import { grid } from '../constants';
+import reorder from '../reorder';
+import type { Quote } from '../types';
 
 const Table = styled.table`
   width: 500px;
